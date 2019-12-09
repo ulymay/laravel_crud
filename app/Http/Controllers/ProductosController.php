@@ -15,7 +15,9 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        return "Estas en la pagina de inicio";
+        $productos=Producto::all();
+
+        return view('productos.index', compact('productos'));
     }
 
     /**
@@ -41,6 +43,10 @@ class ProductosController extends Controller
         $producto = new Producto;
 
         $producto->NombreArticulo=$request->NombreArticulo;
+        $producto->Seccion=$request->Seccion;
+        $producto->Precio=$request->Precio;
+        $producto->Fecha=$request->Fecha;
+        $producto->PaisOrigen=$request->PaisOrigen;
 
         $producto->save();
     }
