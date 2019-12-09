@@ -18,7 +18,7 @@ LEER REGISTROS
 </tr>
     @foreach($productos as $producto)
         <tr>
-            <td>{{$producto->NombreArticulo}}</td>
+            <td><a href="{{route('productos.show', $producto->id)}}">{{$producto->NombreArticulo}}</a></td>
             <td>{{$producto->Seccion}}</td>
             <td>{{$producto->Precio}}</td>
             <td>{{$producto->Fecha}}</td>
