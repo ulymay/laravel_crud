@@ -86,7 +86,11 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return view('productos.update');
+        $producto=Producto::findOrFail($id);
+
+        $producto->update($request->all());
+
+        return redirect('/productos');
     }
 
     /**
