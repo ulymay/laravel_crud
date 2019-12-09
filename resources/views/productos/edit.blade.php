@@ -52,18 +52,26 @@ EDITAR REGISTROS
 
         <tr>
             <td>
-                <input type="submit" value="Enviar" name="enviar">
+                <input type="submit" value="Actualizar" name="enviar">
             </td>
             <td>
-                <input type="reset" value="Borrar" name="Borrar">
+                <input type="reset" value="Borrar campos" name="Borrar">
             </td>
         </tr>
     </table>
-        
-
-        
     
     </form>
+
+    <form action="/productos/{{$producto->id}}" method="post">
+
+    {{csrf_field()}}
+
+    <input type="hidden" name="_method" value="DELETE">
+
+    <input type="submit" value="Eliminar registro">
+
+    </form>
+
 
 @endsection
 

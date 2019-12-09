@@ -101,6 +101,10 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        return view('productos.delete');
+        $producto=Producto::findOrFail($id);
+
+        $producto->delete();
+
+        return redirect('/productos');
     }
 }
