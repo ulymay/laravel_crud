@@ -4,9 +4,11 @@
 
 @section('contenido')
 
-    <form action="" method="post">
+    <form action="/productos" method="post">
     
         <input type="text" name="NombreArticulo" id="">
+
+        {{csrf_field()}}
 
         <input type="submit" value="Enviar" name="enviar">
     
